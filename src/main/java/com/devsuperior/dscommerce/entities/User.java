@@ -86,4 +86,16 @@ public class User {
     public List<Order> getOrders() {
         return orders;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
