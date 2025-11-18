@@ -27,12 +27,11 @@ public class ProductService {
                 () -> new ResourceNotFoundException("Recurso não encontrado"));
         return new ProductDTO(product);
 
-
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(Pageable pageable) {
-        Page<Product> result =  productRepository.findAll(pageable);
+    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+        Page<Product> result =  productRepository.searchByName(name, pageable);
         return result.map(x -> new ProductDTO(x));
 
     }
