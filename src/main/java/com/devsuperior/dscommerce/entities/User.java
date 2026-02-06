@@ -23,7 +23,7 @@ public class User implements UserDetails {
     private String password;
 
     @OneToMany(mappedBy = "client")
-    private List<Order> orders =  new ArrayList<Order>();
+    private List<Order> orders =  new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "tb_user_role",
