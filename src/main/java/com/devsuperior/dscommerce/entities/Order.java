@@ -67,6 +67,10 @@ public class Order {
         return client;
     }
 
+    public Payment getPayment() {
+        return payment;
+    }
+
     public void setClient(User client) {
         this.client = client;
     }
