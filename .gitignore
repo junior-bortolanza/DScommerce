@@ -31,3 +31,21 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Java
+
+
+# Docker data
+.data/
+
+# Environment
+.env
+
+# IDE
+.idea/
+
+
+# Logs
+*.log
+logs/
+
