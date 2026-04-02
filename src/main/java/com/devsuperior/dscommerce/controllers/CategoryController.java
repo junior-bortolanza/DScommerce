@@ -17,7 +17,7 @@ import com.devsuperior.dscommerce.services.CategoryService;
 
 @RestController
 @RequestMapping(value = "/categories")
-@Tag(name = "Categorias", description = "Operações relacionadas a categorias de produtoss")
+@Tag(name = "Categorias", description = "Operações relacionadas a categorias de produtos")
 public class CategoryController {
 
     @Autowired

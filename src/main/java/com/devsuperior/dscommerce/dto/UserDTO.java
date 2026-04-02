@@ -1,38 +1,23 @@
 package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.User;
-import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-import java.time.LocalDate;
-import java.util.*;
-
+@Schema(description = "DTO dos usuarios do sistemas")
 public class UserDTO {
-
+    @Schema(description = "Identificador único do usuário", example = "1")
     private Long id;
+    @Schema(description = "Nome do usuário", example = "Junior Bortolanza")
     private String name;
-    private String email;
-    private String phone;
-    private LocalDate birthDate;
-    private List<String> roles = new ArrayList<>();
 
-    public UserDTO(Long id, String name, String email, String phone, LocalDate birthDate) {
+    public UserDTO(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.birthDate = birthDate;
     }
 
     public UserDTO(User entity) {
         id = entity.getId();
         name = entity.getName();
-        email = entity.getEmail();
-        phone = entity.getPhone();
-        birthDate = entity.getBirthDate();
-        for (GrantedAuthority role : entity.getAuthorities()) {
-            roles.add(role.getAuthority());
-        }
     }
 
     public Long getId() {
@@ -41,21 +26,5 @@ public class UserDTO {
 
     public String getName() {
         return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public List<String> getRoles() {
-        return roles;
     }
 }
