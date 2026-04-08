@@ -30,7 +30,6 @@ public class ProductRepositoryTests {
 
     }
 
-
     @Test
     public void searchByNameShouldReturnProductsWhenNameContainsText() {
         //Arrange

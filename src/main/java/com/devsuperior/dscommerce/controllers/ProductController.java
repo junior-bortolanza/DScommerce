@@ -53,7 +53,7 @@ public class ProductController {
             @Parameter(description = "Filtro por nome do produto", example = "notebook")
             @RequestParam(name = "name", defaultValue = "") String name,
             Pageable pageable) {
-        Page<ProductMinDTO> dto = service.findAll(name, pageable);
+        Page<ProductMinDTO> dto = service.findAllPaged(name, pageable);
         return ResponseEntity.ok(dto);
     }
 
