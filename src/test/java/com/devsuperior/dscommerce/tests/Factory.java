@@ -2,6 +2,7 @@ package com.devsuperior.dscommerce.tests;
 
 import com.devsuperior.dscommerce.dto.CategoryDTO;
 import com.devsuperior.dscommerce.dto.ProductDTO;
+import com.devsuperior.dscommerce.dto.ProductMinDTO;
 import com.devsuperior.dscommerce.entities.Category;
 import com.devsuperior.dscommerce.entities.Product;
 
@@ -16,6 +17,11 @@ public class Factory {
     public static ProductDTO createProductDTO() {
         Product product = createProduct();
         return new ProductDTO(product);
+    }
+
+    public static ProductMinDTO createProductMinDTO() {
+        Product product = createProduct();
+        return new ProductMinDTO(product);
     }
 
     public static Category createCategory() {
